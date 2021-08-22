@@ -5,5 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 urlpatterns = [
-    path('',views.postList, name='blog index'),
-    path('<slug:slug>/', views.postDetail,name='post detail' ),
+    path('',views.proectIndex, name='blog index'),
+    path('Auris/', views.Auris,name='Auris info' ),
+    path('Moddy/' views.Moddy, name='Moddy info'),
+    ]
