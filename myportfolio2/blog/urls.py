@@ -23,7 +23,7 @@ from django.http import HttpResponse
 
 urlpatterns = [
     path('',views.postList, name='blog index'),
-    path('<slug:slug>/', views.postDetail)
+    path('<slug:slug>/', views.postDetail,name='post detail' ),
     
     
 ]

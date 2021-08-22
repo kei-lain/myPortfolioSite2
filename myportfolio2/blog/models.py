@@ -1,5 +1,7 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
+from django.urls import reverse,NoReverseMatch
 
 
 
@@ -20,8 +22,11 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
 # Create your models here.
-class Meta:
-    ordering = ['-created_on']
+    class Meta:
+        ordering = ['-created_on']
 
-    def __str__(self):
-        return self.title
+        def __str__(self):
+            return self.title
+
+    def get_absolute_url(self):
+        return reverse('postDetail', kwargs={'slug': self.slug}) 
