@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def projectIndex(request):
 	return HttpResponse("Index for the project pages")
+def Moddy(request):
+	return HttpResponse("This will be the page about Moddy")
+def Auris(request):
+	return HttpResponse("This will be the page for Auris")
