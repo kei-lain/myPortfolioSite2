@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse
+
 # Create your views here.
 
 def index(request):
-	return HttpResponse("This is the index for my portfolio site!")
+	template = 'index.html'
+	return render(request, template)
 
 def about_view(request):
 	return HttpResponse("This is the about me page.")

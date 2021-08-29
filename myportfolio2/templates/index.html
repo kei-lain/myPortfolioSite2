@@ -1,51 +1,53 @@
-{% extends "base.html" %} 
-{% block content %}
-<style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-    
-    .head_text {
-        color: white;
-    }
-    
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-</style>
-
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-                    <p class="text-light">We Love Django As much as you do..! &nbsp
-                    </p>
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Lain's Portfolio!</title>
+        <!-- Favicon-->
+        <link rel="icon" type="{% static 'image/x-icon' %}" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <p style="color:ffffff">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container px-10 px-lg-15">
+                <a class="navbar-brand" href="#!">Lain's Site</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        
+                        <li class="nav-item active"><a class="nav-link" href="#"><a href="{% url 'home'%}"> Home</a></li>
+                        <div> letter-spacing px-1</div>
+                        <li class="nav-item"><a class="nav-link" href="#!"><a href="{% url 'about' %}"> <p style="color:fffff">About</p></a></li>
+                        <div> letter-spacing:1px</div>
+                        <li class="nav-item"><a class="nav-link" href="#!"><a href="{% url 'projectIndex' %}"> Projects</a></li>
+                        <div> letter-spacing:1px</div>
+                        <li class="nav-item"><a class="nav-link" href="#!"><a href="{% url 'contact' %}"> Contacts</a></li>
+                        
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
-            {% for post in posts %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+        </nav>
+        <!-- Page Content-->
+        <section>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6">
+                        <h1 class="mt-5">Summary</h1>
+                        <p>I am pasionate about Open-source technology and its benefits in regards to sustainability and general access.</p>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
-    </div>
-</div>
-{%endblock%}
+        </section>
+        <!-- Bootstrap core JS-->
+        <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.mi.js ></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+</html>
