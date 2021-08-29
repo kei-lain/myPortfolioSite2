@@ -59,7 +59,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #ffffff;
   --bs-body-bg: #fff;
 }
 
@@ -81,8 +81,10 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: var(--bs-white);
   text-align: var(--bs-body-text-align);
+  
+
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -91,7 +93,7 @@ body {
 hr {
   margin: 1rem 0;
   color: inherit;
-  background-color: currentColor;
+  background-color: var(--bs-white);
   border: 0;
   opacity: 0.25;
 }
@@ -109,6 +111,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  color:#ffffff;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -2503,7 +2506,7 @@ textarea.form-control-lg {
   border-color: #0d6efd;
 }
 .form-check-input:checked[type=checkbox] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  background-image: url("https://1.bp.blogspot.com/-R8tKRwRZjFc/VlssTsi-NeI/AAAAAAAAHaw/AMjDwOA-kqY/s1600/Programmer-Wallpaper.jpg"");
 }
 .form-check-input:checked[type=radio] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
@@ -7308,6 +7311,7 @@ textarea.form-control-lg {
 
 .mt-5 {
   margin-top: 3rem !important;
+  color: #fff;
 }
 
 .mt-auto {
@@ -11274,6 +11278,9 @@ textarea.form-control-lg {
   }
 }
 body {
-  background: url("https://dummyimage.com/1920x1080/dee2e6/6c757d.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-image: url(../assets/img/Programmer-Wallpaper.jgp) no-repeat center center fixed;;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
