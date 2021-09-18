@@ -9,13 +9,17 @@ def index(request):
 	return render(request, template)
 
 def about_view(request):
-	return HttpResponse("This is the about me page.")
+	return render(request, 'about/about_index.html')
 
 def contact_view(request):
-	return HttpResponse("This is the contact info page.")
+	name = "Lainey 'Lain' Tubbs"
+	emailAddress = "laineytubbs@protonmail.com"
+	githubLink = "https://wwww.github.com/kei-lain"
 
-def project_view(request):
-	return HttpResponse("This is the projects home page")
+	context = {
+		"name" : name,
+		"email" : emailAddress,
+		"github" : githubLink,
 
-def blog_view(request):
-	return HttpResponse("This is the blog page")
+	}
+	return render(request, 'contact/contact_index.html', context )

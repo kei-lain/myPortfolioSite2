@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-deom .models import Project
+from .models import Project
 from django.urls import reverse
 
 
@@ -12,4 +12,9 @@ def projectIndex(request):
 		"projects" : projects,
 			}
 	return render(request, 'projects/project_index.html',context)
-def project
+# def projectDetail(request):
+# 	projects = Project.objects()
+# 	context = {
+# 		"projects": projects,
+# 	}
+# 	return(render(request,'	'))
