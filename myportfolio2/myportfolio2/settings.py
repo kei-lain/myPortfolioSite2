@@ -86,11 +86,6 @@ WSGI_APPLICATION = 'myportfolio2.wsgi.application'
 #         default=config('DATABASE_URL')
 #     )
 # }
-
-import dj_database_url
-POSTGRES_URL = "postgres://jyjmlcvehouenp:db66a23f61616fff7add4c393581c1dc0457841b9317211823240a5726ea5813@ec2-54-158-247-97.compute-1.amazonaws.com:5432/ddaveih22cda7o"
-DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -101,6 +96,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+POSTGRES_URL = "postgres://jyjmlcvehouenp:db66a23f61616fff7add4c393581c1dc0457841b9317211823240a5726ea5813@ec2-54-158-247-97.compute-1.amazonaws.com:5432/ddaveih22cda7o"
+DATABASES['default'].update(db_from_env)
+
 
 
 
