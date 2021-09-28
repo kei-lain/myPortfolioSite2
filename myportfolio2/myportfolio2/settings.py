@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-71%m&ae(+tgy=h@s=*azmh-bsw)mzl2sq6ggs09py@)hcx#8m1
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ['laineytubbs-portfolio.herokuapp.com',]
+ALLOWED_HOSTS = ['laineytubbs-portfolio.herokuapp.com','127.0.0.1']
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -92,9 +92,12 @@ DATABASES = {
     }
 }
 
-import dj_database_irl
-db_from_env = dj.database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+from decouple import config
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 
 # Password validation
