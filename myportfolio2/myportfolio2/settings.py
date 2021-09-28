@@ -80,6 +80,12 @@ WSGI_APPLICATION = 'myportfolio2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# from decouple import config
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
+# }
 
 DATABASES = {
     'default': {
@@ -87,17 +93,11 @@ DATABASES = {
         'NAME': 'mydb',
         'USER': 'lain',
         'PASSWORD': 'k!m!n#34',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
-from decouple import config
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
 
 
 # Password validation
