@@ -86,16 +86,16 @@ WSGI_APPLICATION = 'myportfolio2.wsgi.application'
 #         default=config('DATABASE_URL')
 #     )
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'mydb',
-#         'USER': 'lain',
-#         'PASSWORD': 'k!m!n#34',
-#         'HOST': '',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
+        'USER': 'lain',
+        'PASSWORD': 'k!m!n#34',
+        'HOST': '',
+        'PORT': '5432',
+    }
+}
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
