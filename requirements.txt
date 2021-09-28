@@ -6,7 +6,7 @@ pytz==2021.1
 sqlparse==0.4.1
 whitenoise==5.3.0
 decouple==0.0.7
-dj_databse_url==0.5.0
+dj_database_url==0.5.0
 
 
 
