@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Project
 from django.urls import reverse
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 # Create your views here.
 
@@ -17,6 +18,8 @@ class projectIndex(ListView):
 	model = Project
 	context_object_name = 'projects'
 	template_name = 'projects/project_index.html'
+
+class projectDetail(detai)
 	
 # def projectDetail(request):
 # 	projects = Project.objects()
