@@ -19,8 +19,10 @@ class projectIndex(ListView):
 	context_object_name = 'projects'
 	template_name = 'projects/project_index.html'
 
-class projectDetail(detai)
-	
+class projectDetail(DetailView):
+	model = Project
+	context_object_name = 'project'
+	template_name = 'projects/project_detail.html'
 # def projectDetail(request):
 # 	projects = Project.objects()
 # 	context = {
