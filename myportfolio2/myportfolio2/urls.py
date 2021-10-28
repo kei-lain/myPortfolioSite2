@@ -24,7 +24,7 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
     path('projects/', include('projects.urls'), name='projects'),
     # path('blog/', inlcude('blog.urls'))
-    path('blog/', include('blog.urls')),
+    path('blog/', include('blog.urls'), name='blog'),
 
     
     

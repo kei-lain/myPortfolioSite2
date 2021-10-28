@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 from django.views import generic
-
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 # Create your views here.
 # def indexer(request):
@@ -11,25 +12,18 @@ from django.views import generic
 # 	posts = Post.objects.all()
 # 	queryset = posts.order_by('-created_on')
 # 	template_name = 'base_index.html'
-def postList(request):
-	posts = Post.objects.all()
-	queryset = posts.order_by('-created_on')
-	context = {
-		"posts" : posts,
-		"queryset": queryset, 
-	}
-	return render(request, 'base_index.html', context)
-	
-				
-		
-def postDetail(request):
- 	posts = Post.objects()
-# class postDetail(generic.ListView):
- 	template_name = 'post_detail.html'
- 	context = {
- 	"model": model,
- 	}
- 	return(render(request,'post_detail.html',context))
+class postView(ListView):
+	model = Post
+	context_object_name = 'posts'
+	template_name = 'base_index.html'
+	# def get_context_data(self, **kwargs):
+	#     context = super().get_context_data(**kwargs)
+	#     context['posts'] = context['posts'].filter('-created_on')
+	#     return context
+class postDetail(DetailView):
+	model = Post
+	context_object_name = 'post'
+	template_name = 'post_detail.html'
 
 
 
