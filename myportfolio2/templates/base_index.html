@@ -48,9 +48,8 @@
                                     <h1>  {{ post.title }} </h1>
                                     <bre>
                                     </bre>
-                                    <p class="card-text text-muted h6">{{ project.language}} <a href= "{{ project.projectlink }}">Code for this project</a> </p>
+                                    <p><a href = "{% url 'post detail' post.title|slugify%}"> Details</a></p>
                                     <p> {{ post.content }}</p>
-                                    <p> {{ project.created_on }}</p>
                                 </div>
                             </div>
                         </div>
